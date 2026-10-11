@@ -1,0 +1,115 @@
+@import "tailwindcss";
+
+@layer base {
+  body {
+    font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  }
+  h1, h2, h3, h4, h5, h6, .font-display {
+    font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+    letter-spacing: -0.025em;
+  }
+  ::selection {
+    background-color: #bae6fd;
+    color: #0369a1;
+  }
+}
+
+/* Custom subtle scrollbar with soft sky blue touch */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #f8fafc;
+}
+::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #38bdf8;
+}
+
+@keyframes marquee {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.animate-marquee {
+  display: flex;
+  width: max-content;
+  animation: marquee 28s linear infinite;
+}
+
+.animate-marquee:hover {
+  animation-play-state: paused;
+}
+
+/* Atmospheric organic light movement */
+@keyframes aurora-1 {
+  0%, 100% {
+    transform: translate(0px, 0px) scale(1);
+    opacity: 0.55;
+  }
+  33% {
+    transform: translate(30px, -40px) scale(1.15);
+    opacity: 0.75;
+  }
+  66% {
+    transform: translate(-25px, 25px) scale(0.92);
+    opacity: 0.45;
+  }
+}
+
+@keyframes aurora-2 {
+  0%, 100% {
+    transform: translate(0px, 0px) scale(1);
+    opacity: 0.5;
+  }
+  33% {
+    transform: translate(-35px, 30px) scale(1.2);
+    opacity: 0.7;
+  }
+  66% {
+    transform: translate(25px, -20px) scale(0.95);
+    opacity: 0.4;
+  }
+}
+
+.animate-aurora-1 {
+  animation: aurora-1 16s ease-in-out infinite;
+}
+
+.animate-aurora-2 {
+  animation: aurora-2 20s ease-in-out infinite;
+}
+
+/* Subtle creative design studio grid */
+.bg-design-grid {
+  background-image: 
+    linear-gradient(to right, rgba(14, 165, 233, 0.05) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(14, 165, 233, 0.05) 1px, transparent 1px);
+  background-size: 36px 36px;
+}
+
+.bg-design-dots {
+  background-image: radial-gradient(rgba(14, 165, 233, 0.12) 1px, transparent 1px);
+  background-size: 24px 24px;
+}
+
+/* Tactile button animations */
+.btn-primary {
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 25px -5px rgba(14, 165, 233, 0.35);
+}
+.btn-primary:active {
+  transform: translateY(0);
+}
+
